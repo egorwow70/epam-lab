@@ -1,0 +1,151 @@
+.-app-todo__list-item {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 16.666666666666666666666666667%;
+
+    color: white;
+}
+
+.-app-todo__item-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 50px;
+    padding-right: 100px;
+
+    transition: .3s;
+
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+
+    background: transparent;
+
+    color: white;
+    font-size: 18px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    letter-spacing: 2px;
+}
+
+.-app-todo__item-input_done {
+    border-bottom: 2px solid rgba(232, 175, 175, 1);
+}
+
+.-app-todo__item-done-button {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+
+    width: 55px;
+    height: 55px;
+
+    cursor: pointer;
+
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(232, 175, 175, 1);
+
+    color: black;
+}
+
+.-app-todo__item-done-button::after {
+    content: '\f00c';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    transition: .2s;
+
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 free", "Font Awesome 5 brands";
+}
+
+.-app-todo__item-done-button:hover::after {
+    font-size: 22px;
+}
+
+.-app-todo__item-edit-button {
+    top: 50%;
+    right: 10%;
+    transform: translate(0%, -50%);
+}
+
+.-app-todo__item-delete-button {
+    top: 50%;
+    right: 2.5%;
+    transform: translate(0%, -50%);
+}
+
+
+.-app-todo__item-edit-button,
+.-app-todo__item-delete-button {
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+    margin: 0px;
+    padding: 0px;
+
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+
+    background: none;
+}
+
+.-app-todo__item-edit-button::after {
+    content: '\f044';
+}
+
+.-app-todo__item-delete-button::after {
+    content: '\f2ed';
+}
+
+.-app-todo__item-edit-button::after,
+.-app-todo__item-delete-button::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30px;
+    height: 30px;
+
+    transition: .2s;
+
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 free", "Font Awesome 5 brands";
+}
+
+.-app-todo__item-edit-button:hover::after,
+.-app-todo__item-delete-button:hover::after {
+    color: rgba(232, 175, 175, 1);
+}
+
+.-app-todo__item-is-done_done {
+    text-decoration: line-through;
+}

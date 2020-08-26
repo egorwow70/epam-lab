@@ -1,0 +1,8 @@
+.-app-todo__list {
+    width: 100%;
+    height: 70%;
+    margin: 0px;
+    padding: 0px;
+
+    list-style-type: none;
+}
