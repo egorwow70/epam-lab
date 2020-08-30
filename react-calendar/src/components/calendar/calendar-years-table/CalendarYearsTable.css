@@ -1,0 +1,25 @@
+.-app-calendar__years-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 90%;
+
+    color: white;
+}
+
+.-app-calendar__years-table-wrapper {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    list-style-type: none;
+
+    color: white;
+}

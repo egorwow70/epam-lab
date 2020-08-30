@@ -1,0 +1,12 @@
+.-app-calendar__data {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.-app-calendar__data-info {
+    cursor: pointer;
+}
+
+.-app-calendar__data-info_with-default-cursor {
+    cursor: default;
+}

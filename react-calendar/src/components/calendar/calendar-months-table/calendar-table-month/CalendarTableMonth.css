@@ -1,0 +1,28 @@
+.-app-calendar__month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    height: 25%;
+    box-sizing: border-box;
+
+    transition: .1s;
+    cursor: pointer;
+}
+
+.-app-calendar__month_grey {
+    color: grey;
+}
+
+.-app-calendar__month_current {
+    background-color: rgba(76, 76, 238, 1);
+}
+
+.-app-calendar__month:hover {
+    border: 3px solid grey;
+}
+
+.-app-calendar__month_current:hover {
+    border: 3px solid transparent;
+}
