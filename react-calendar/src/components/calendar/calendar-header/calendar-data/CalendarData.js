@@ -42,8 +42,9 @@ function CalendarData(props) {
 CalendarData.propTypes = {
     currentCalendarDate: PropTypes.instanceOf(RussianDate),
     onCalendarMonthMode : PropTypes.func,
+    onCalendarYearsMode: PropTypes.func,
     isSwitchedToMonthsTable: PropTypes.bool,
-    isSwitchedToYearsTable: PropTypes.bool
+    isSwitchedToYearsTable: PropTypes.bool,
 }
 
 export default React.memo(CalendarData);

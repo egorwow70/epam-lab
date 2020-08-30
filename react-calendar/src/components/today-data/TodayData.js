@@ -1,5 +1,6 @@
 import React from 'react';
 import RussianDate from '../../models/russian-date';
+import PropTypes from 'prop-types';
 
 class TodayData extends React.PureComponent {
     constructor(props) {
@@ -20,6 +21,10 @@ class TodayData extends React.PureComponent {
             </div>
         )
     }
+}
+
+TodayData.propTypes = {
+    render: PropTypes.func
 }
 
 export default TodayData;

@@ -54,6 +54,8 @@ CalendarSwitcher.propTypes = {
     onNextMonthChange : PropTypes.func,
     onPreviousYearChange : PropTypes.func,
     onNextYearChange : PropTypes.func,
+    onPreviousDecadeChange: PropTypes.func,
+    onNextDecadeChange: PropTypes.func
 }
 
 export default React.memo(CalendarSwitcher);

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarModel from '../../../models/calendar-model';
 import withCalendarBlocks from '../../../hocs/withCalendarBlocks';
 import CalendarTableDay from './calendar-table-day/CalendarTableDay';
 import CalendarTablesClassNames from '../../../models/calendar-tables-class-names';
@@ -18,7 +17,7 @@ function CalendarDaysTable(props) {
 }
 
 CalendarDaysTable.propTypes = {
-    currentCalendar: PropTypes.instanceOf(CalendarModel)
+    getCalendarBlockList: PropTypes.func
 }
 
 export default withCalendarBlocks(

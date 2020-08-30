@@ -30,7 +30,8 @@ function CalendarTableMonth(props) {
 
 CalendarTableMonth.propTypes = {
     calendarBlock: PropTypes.instanceOf(CalendarMonth),
-    onSwitchToThisMonth: PropTypes.func
+    onSwitchToThisMonth: PropTypes.func,
+    getCalendarBlockStyles: PropTypes.func
 } 
 
 export default withStylesCalendarBlock(

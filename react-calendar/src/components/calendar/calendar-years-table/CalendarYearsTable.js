@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarModel from '../../../models/calendar-model';
 import CalendarTableYear from './calendar-table-year/CalendarTableYear';
 import withCalendarBlocks from '../../../hocs/withCalendarBlocks';
 import CalendarTablesClassNames from '../../../models/calendar-tables-class-names';
@@ -18,8 +17,7 @@ function CalendarYearsTable(props) {
 }
 
 CalendarYearsTable.propTypes = {
-    currentCalendar: PropTypes.instanceOf(CalendarModel),
-    onSwitchToThisYear: PropTypes.func
+    getCalendarBlockList: PropTypes.func
 }
 
 export default withCalendarBlocks(

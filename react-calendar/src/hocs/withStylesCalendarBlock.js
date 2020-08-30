@@ -1,7 +1,6 @@
 import React from 'react';
 import CalendarBlocksClassNames from '../models/calendar-blocks-class-names';
 
-
 function withStylesCalendarBlock(Component, componentClassName) {
     class WithStylesCalendarBlock extends React.PureComponent {
         constructor(props) {
