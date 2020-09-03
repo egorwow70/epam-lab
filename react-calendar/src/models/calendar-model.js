@@ -91,7 +91,7 @@ class CalendarModel {
                 const currentPreviousMonthCalendarDay = previousMonthDateDaysNumber - previousMonthCalendarDaysNumber + index + 1;
                 dayCounter--;
                 currentCalendarDayOptions.dayNumber = currentPreviousMonthCalendarDay;
-                currentCalendarDayOptions.month =  previousMonthDate.data.month;
+                currentCalendarDayOptions.month = previousMonthDate.data.month;
                 currentCalendarDayOptions.year = previousMonthDate.data.year;
                 return this.getCurrentCalendarDay(currentCalendarDayOptions);
             } else {
@@ -294,10 +294,10 @@ class CalendarModel {
     }
 
     getCurrentCalendarDay({
-        dayNumber, 
-        month, 
-        year, 
-        isCurrentMonthDay = false, 
+        dayNumber,
+        month,
+        year,
+        isCurrentMonthDay = false,
         isCurrentDay = false
     }) {
         return new CalendarDay(
@@ -310,10 +310,10 @@ class CalendarModel {
     }
 
     getCurrentCalendarMonth({
-        month, 
-        year, 
-        isCurrentYearMonth = false, 
-        isCurrentMonth = false, 
+        month,
+        year,
+        isCurrentYearMonth = false,
+        isCurrentMonth = false,
         monthName
     }) {
         return new CalendarMonth(
@@ -326,8 +326,8 @@ class CalendarModel {
     }
 
     getCurrentCalendarYear({
-        year, 
-        isCurrentDecadeYear = false, 
+        year,
+        isCurrentDecadeYear = false,
         isCurrentYear = false
     }) {
         return new CalendarYear(
@@ -339,7 +339,7 @@ class CalendarModel {
 
     clone() {
         return new CalendarModel(this.calendarDate.clone());
-    }  
+    }
 }
 
 export default CalendarModel;

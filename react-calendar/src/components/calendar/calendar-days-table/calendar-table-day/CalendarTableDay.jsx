@@ -24,6 +24,12 @@ function CalendarTableDay(props) {
         }
     }
 
+    function formatDayOrMonthNumber(dayOrMonthNumber) {
+        return (dayOrMonthNumber < 10)
+            ? '0' + dayOrMonthNumber
+            : dayOrMonthNumber;
+    }
+
     const currentCalendarDay = props.calendarBlock;
     const calendarDayStyles = props.getCalendarBlockStyles(currentCalendarDay.clone());
 
@@ -31,7 +37,7 @@ function CalendarTableDay(props) {
         <li
             className={calendarDayStyles.join(' ')}
             onClick={(event) => highlightCalendarDay(event)}
-            title={`${currentCalendarDay.dayNumber}.${currentCalendarDay.month}.${currentCalendarDay.year}`}>
+            title={`${formatDayOrMonthNumber(currentCalendarDay.dayNumber)}.${formatDayOrMonthNumber(currentCalendarDay.month)}.${currentCalendarDay.year}`}>
             {currentCalendarDay.dayNumber}
         </li>
     );
