@@ -1,0 +1,15 @@
+@import url('./assets/fonts/fontawesome/all/all.min.css') all;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap') all;
+@import url('./app.css') all;
+@import url('./components/todo/todo.css') all;
+@import url('./components/todo/todo-header/todo-header.css') all;
+@import url('./components/todo/todo-list/todo-list.css') all;
+@import url('./components/todo/todo-list/todo-item/todo-item.css') all;
+@import url('./components/todo/todo-add-button/todo-add-button.css') all;
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Nanum Gothic', sans-serif;
+}

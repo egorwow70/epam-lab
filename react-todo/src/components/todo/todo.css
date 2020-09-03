@@ -1,0 +1,41 @@
+.-app-todo {
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 500px;
+    height: 750px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+}
+
+.-app-todo__no-todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 70%;
+}
+
+.-app-todo__no-todo-title {
+    margin: 50px 0px;
+    margin-top: 200px;
+}
+
+.-app-todo__no-todo-subtitle {
+    margin: 0px;
+}
+
+.-app-todo__no-todo-title,
+.-app-todo__no-todo-subtitle {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
