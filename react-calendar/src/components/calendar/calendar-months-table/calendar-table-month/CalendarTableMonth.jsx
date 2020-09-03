@@ -13,7 +13,7 @@ function CalendarTableMonth(props) {
     const currentCaledarMonth = props.calendarBlock;
     const calendarMonthStyles = props.getCalendarBlockStyles(currentCaledarMonth.clone());
 
-    const currentMonthEuropeDate = new Date(currentCaledarMonth.year, currentCaledarMonth.month, 1);
+    const currentMonthEuropeDate = new Date(currentCaledarMonth.year, currentCaledarMonth.month - 1, 1);
     const currentMonthRussianDate = new RussianDate(currentMonthEuropeDate);
     return (
         <li

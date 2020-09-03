@@ -53,6 +53,7 @@ class CalendarModel {
     createCurrentMonth() {
         let dayCounter = 0;
         this._calendarDays = [...this._calendarDays].map((calendarDay, index) => {
+            const currentCalendarDayOptions = {};
             if (
                 index + 1 >= this._thisFirstMonthDayNumber &&
                 dayCounter < this._thisMonthDaysNumber
@@ -63,21 +64,14 @@ class CalendarModel {
                     this._calendarDate.data.month,
                     this._calendarDate.data.year
                 );
-                return new CalendarDay(
-                    dayCounter,
-                    this._calendarDate.data.month,
-                    this._calendarDate.data.year,
-                    true,
-                    isCurrentDay
-                );
+                currentCalendarDayOptions.dayNumber = dayCounter;
+                currentCalendarDayOptions.month = this._calendarDate.data.month;
+                currentCalendarDayOptions.year = this._calendarDate.data.year;
+                currentCalendarDayOptions.isCurrentMonthDay = true;
+                currentCalendarDayOptions.isCurrentDay = isCurrentDay;
+                return this.getCurrentCalendarDay(currentCalendarDayOptions);
             } else {
-                return new CalendarDay(
-                    undefined,
-                    undefined,
-                    undefined,
-                    false,
-                    false,
-                );
+                return this.getCurrentCalendarDay(currentCalendarDayOptions);
             }
         });
     }
@@ -90,27 +84,27 @@ class CalendarModel {
             this._nextMonthCalendarDaysNumber;
         let dayCounter = previousMonthCalendarDaysNumber;
         this._calendarDays = [...this._calendarDays].map((calendarDay, index) => {
+            const currentCalendarDayOptions = {};
             if (
                 dayCounter > 0
             ) {
                 const currentPreviousMonthCalendarDay = previousMonthDateDaysNumber - previousMonthCalendarDaysNumber + index + 1;
                 dayCounter--;
-                return new CalendarDay(
-                    currentPreviousMonthCalendarDay,
-                    previousMonthDate.data.month,
-                    previousMonthDate.data.year,
-                    false,
-                    false
-                );
+                currentCalendarDayOptions.dayNumber = currentPreviousMonthCalendarDay;
+                currentCalendarDayOptions.month =  previousMonthDate.data.month;
+                currentCalendarDayOptions.year = previousMonthDate.data.year;
+                return this.getCurrentCalendarDay(currentCalendarDayOptions);
             } else {
-                return calendarDay instanceof CalendarDay ?
-                    new CalendarDay(
-                        calendarDay.dayNumber,
-                        calendarDay.month,
-                        calendarDay.year,
-                        calendarDay.isCurrentMonthDay,
-                        calendarDay.isCurrentDay
-                    ) : null;
+                if (calendarDay instanceof CalendarDay) {
+                    currentCalendarDayOptions.dayNumber = calendarDay.dayNumber;
+                    currentCalendarDayOptions.month = calendarDay.month;
+                    currentCalendarDayOptions.year = calendarDay.year;
+                    currentCalendarDayOptions.isCurrentMonthDay = calendarDay.isCurrentMonthDay;
+                    currentCalendarDayOptions.isCurrentDay = calendarDay.isCurrentDay;
+                    return this.getCurrentCalendarDay(currentCalendarDayOptions);
+                } else {
+                    return null;
+                }
             }
         });
     }
@@ -120,24 +114,24 @@ class CalendarModel {
         const firstNumberOfNextMonthCalendarDay = this._thisMonthDaysNumber + this._thisFirstMonthDayNumber;
         let dayCounter = 0;
         this._calendarDays = [...this._calendarDays].map((calendarDay, index) => {
+            const currentCalendarDayOptions = {};
             if (index + 1 >= firstNumberOfNextMonthCalendarDay) {
                 dayCounter++;
-                return new CalendarDay(
-                    dayCounter,
-                    nextMonthDate.data.month,
-                    nextMonthDate.data.year,
-                    false,
-                    false
-                );
+                currentCalendarDayOptions.dayNumber = dayCounter;
+                currentCalendarDayOptions.month = nextMonthDate.data.month;
+                currentCalendarDayOptions.year = nextMonthDate.data.year;
+                return this.getCurrentCalendarDay(currentCalendarDayOptions);
             } else {
-                return calendarDay instanceof CalendarDay ?
-                    new CalendarDay(
-                        calendarDay.dayNumber,
-                        calendarDay.month,
-                        calendarDay.year,
-                        calendarDay.isCurrentMonthDay,
-                        calendarDay.isCurrentDay
-                    ) : null;
+                if (calendarDay instanceof CalendarDay) {
+                    currentCalendarDayOptions.dayNumber = calendarDay.dayNumber;
+                    currentCalendarDayOptions.month = calendarDay.month;
+                    currentCalendarDayOptions.year = calendarDay.year;
+                    currentCalendarDayOptions.isCurrentMonthDay = calendarDay.isCurrentMonthDay;
+                    currentCalendarDayOptions.isCurrentDay = calendarDay.isCurrentDay;
+                    return this.getCurrentCalendarDay(currentCalendarDayOptions);
+                } else {
+                    return null;
+                }
             }
         });
         this._nextMonthCalendarDaysNumber = dayCounter;
@@ -159,36 +153,34 @@ class CalendarModel {
         let thisYearMonthCounter = 0;
         let nextYearMonthCounter = 0;
         this._calendarMonths = [...this._calendarMonths].map((calendarMonth, index) => {
+            const currentCalendarMonthOptions = {};
+            let shorcutMonthName;
             if (index < CalendarModel.YEAR_MONTHS_NUMBER) {
                 thisYearMonthCounter++;
                 const isCurrentMonth = this.isCurrentMonth(
                     thisYearMonthCounter,
                     this._calendarDate.data.year
                 );
-                const shorcutMonthName = this.getCalendarMonthName(
+                shorcutMonthName = this.getCalendarMonthName(
                     thisYearMonthCounter,
                     this._calendarDate.data.year
                 );
-                return new CalendarMonth(
-                    thisYearMonthCounter,
-                    this._calendarDate.data.year,
-                    true,
-                    isCurrentMonth,
-                    shorcutMonthName
-                )
+                currentCalendarMonthOptions.month = thisYearMonthCounter;
+                currentCalendarMonthOptions.year = this._calendarDate.data.year;
+                currentCalendarMonthOptions.isCurrentYearMonth = true;
+                currentCalendarMonthOptions.isCurrentMonth = isCurrentMonth;
+                currentCalendarMonthOptions.monthName = shorcutMonthName;
+                return this.getCurrentCalendarMonth(currentCalendarMonthOptions);
             } else {
                 nextYearMonthCounter++;
-                const shorcutMonthName = this.getCalendarMonthName(
+                shorcutMonthName = this.getCalendarMonthName(
                     nextYearMonthCounter,
                     this._calendarDate.data.year
                 );
-                return new CalendarMonth(
-                    nextYearMonthCounter,
-                    this._calendarDate.data.year + 1,
-                    false,
-                    false,
-                    shorcutMonthName
-                );
+                currentCalendarMonthOptions.month = nextYearMonthCounter;
+                currentCalendarMonthOptions.year = this._calendarDate.data.year + 1;
+                currentCalendarMonthOptions.monthName = shorcutMonthName;
+                return this.getCurrentCalendarMonth(currentCalendarMonthOptions);
             }
         });
     }
@@ -212,6 +204,7 @@ class CalendarModel {
         let nextDecadeYearCounter = 0;
         let previousDecadeYearCounter = indexToStartDecade + 1;
         this._calendarYears = [...this._calendarYears].map((calendarYear, index) => {
+            const currentCalendarYearOptions = {};
             if (
                 thisDecadeYearCounter < CalendarModel.DECADE_YEARS_NUMBER &&
                 index > indexToStartDecade
@@ -221,28 +214,21 @@ class CalendarModel {
                 const isCurrentYear = this.isCurrentYear(
                     yearNumber
                 );
-                return new CalendarYear(
-                    yearNumber,
-                    true,
-                    isCurrentYear
-                );
+                currentCalendarYearOptions.year = yearNumber;
+                currentCalendarYearOptions.isCurrentDecadeYear = true;
+                currentCalendarYearOptions.isCurrentYear = isCurrentYear;
+                return this.getCurrentCalendarYear(currentCalendarYearOptions);
             } else {
                 if (index <= indexToStartDecade) {
                     const currentYearOfPreviousDecade = this._startDecadeYearNumber - previousDecadeYearCounter;
                     previousDecadeYearCounter--;
-                    return new CalendarYear(
-                        currentYearOfPreviousDecade,
-                        false,
-                        false
-                    );
+                    currentCalendarYearOptions.year = currentYearOfPreviousDecade;
+                    return this.getCurrentCalendarYear(currentCalendarYearOptions);
                 } else {
                     const currentYearOfNextDecade = startNextDecadeYearNumber + nextDecadeYearCounter;
                     nextDecadeYearCounter++;
-                    return new CalendarYear(
-                        currentYearOfNextDecade,
-                        false,
-                        false
-                    );
+                    currentCalendarYearOptions.year = currentYearOfNextDecade;
+                    return this.getCurrentCalendarYear(currentCalendarYearOptions);
                 }
             }
         });
@@ -307,6 +293,49 @@ class CalendarModel {
         ) + minIndexToStartDecade;
     }
 
+    getCurrentCalendarDay({
+        dayNumber, 
+        month, 
+        year, 
+        isCurrentMonthDay = false, 
+        isCurrentDay = false
+    }) {
+        return new CalendarDay(
+            dayNumber,
+            month,
+            year,
+            isCurrentMonthDay,
+            isCurrentDay
+        );
+    }
+
+    getCurrentCalendarMonth({
+        month, 
+        year, 
+        isCurrentYearMonth = false, 
+        isCurrentMonth = false, 
+        monthName
+    }) {
+        return new CalendarMonth(
+            month,
+            year,
+            isCurrentYearMonth,
+            isCurrentMonth,
+            monthName
+        );
+    }
+
+    getCurrentCalendarYear({
+        year, 
+        isCurrentDecadeYear = false, 
+        isCurrentYear = false
+    }) {
+        return new CalendarYear(
+            year,
+            isCurrentDecadeYear,
+            isCurrentYear
+        );
+    }
 
     clone() {
         return new CalendarModel(this.calendarDate.clone());
