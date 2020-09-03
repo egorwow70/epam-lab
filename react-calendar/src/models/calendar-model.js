@@ -310,9 +310,7 @@ class CalendarModel {
 
     clone() {
         return new CalendarModel(this.calendarDate.clone());
-    }
-
-  
+    }  
 }
 
 export default CalendarModel;
