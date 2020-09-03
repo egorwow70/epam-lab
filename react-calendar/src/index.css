@@ -1,0 +1,27 @@
+@import url('./assets/fonts/fontawesome/all/all.min.css');
+@import url('./components/calendar/Calendar.css') all;
+@import url('./components/calendar/calendar-header/CalendarHeader.css') all;
+@import url('./components/calendar/calendar-header/calendar-data/CalendarData.css') all;
+@import url('./components/calendar/calendar-header/calendar-switcher/CalendarSwitcher.css') all;
+@import url('./components/calendar/calendar-weekdays/CalendarWeekdays.css') all;
+@import url('./components/calendar/calendar-weekdays/calendar-weekday/CalendarWeekday.css') all;
+@import url('./components/calendar/calendar-days-table/CalendarDaysTable.css') all;
+@import url('./components/calendar/calendar-days-table/calendar-table-day/CalendarTableDay.css') all;
+@import url('./components/calendar/calendar-months-table/CalendarMonthsTable.css') all;
+@import url('./components/calendar/calendar-months-table/calendar-table-month/CalendarTableMonth.css') all;
+@import url('./components/calendar/calendar-years-table/CalendarYearsTable.css') all;
+@import url('./components/calendar/calendar-years-table/calendar-table-year/CalendarTableYear.css') all;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
