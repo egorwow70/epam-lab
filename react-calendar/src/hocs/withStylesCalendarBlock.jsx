@@ -46,12 +46,12 @@ function withStylesCalendarBlock(Component, componentClassName) {
             }
         }
 
-        setCalendarBlockStyles(
+        setCalendarBlockStyles({
             calendarBlock,
             calendarBlockStyles,
             isNotCurrentDiapazonBlockClass,
             isCurrentBlockClass
-        ) {
+        }) {
             if (!this.isCurrentDiapazonBlock(calendarBlock)) {
                 calendarBlockStyles.push(isNotCurrentDiapazonBlockClass);
             }
@@ -63,33 +63,29 @@ function withStylesCalendarBlock(Component, componentClassName) {
         getCalendarBlockStyles(calendarBlock) {
             let calendarBlockStyles = [];
             let defaultCalendarBlockStyles;
+            const currentCalendarBlockOptions = {};
             if (componentClassName === this.state.calendarDayBlockClassName) {
                 defaultCalendarBlockStyles = [this.state.calendarDayBlockClassName];
-                this.setCalendarBlockStyles(
-                    calendarBlock,
-                    calendarBlockStyles,
-                    this.state.calendarDayBlockClassNameGreyMode,
-                    this.state.calendarDayBlockClassNameCurrentMode
-                );
+                currentCalendarBlockOptions.calendarBlock = calendarBlock;
+                currentCalendarBlockOptions.calendarBlockStyles = calendarBlockStyles;
+                currentCalendarBlockOptions.isNotCurrentDiapazonBlockClass = this.state.calendarDayBlockClassNameGreyMode;
+                currentCalendarBlockOptions.isCurrentBlockClass = this.state.calendarDayBlockClassNameCurrentMode;
             }
             if (componentClassName === this.state.calendarMonthBlockClassName) {
                 defaultCalendarBlockStyles = [this.state.calendarMonthBlockClassName];
-                this.setCalendarBlockStyles(
-                    calendarBlock,
-                    calendarBlockStyles,
-                    this.state.calendarMonthBlockClassNameGreyMode,
-                    this.state.calendarMonthBlockClassNameCurrentMode
-                );
+                currentCalendarBlockOptions.calendarBlock = calendarBlock;
+                currentCalendarBlockOptions.calendarBlockStyles = calendarBlockStyles;
+                currentCalendarBlockOptions.isNotCurrentDiapazonBlockClass = this.state.calendarMonthBlockClassNameGreyMode;
+                currentCalendarBlockOptions.isCurrentBlockClass = this.state.calendarMonthBlockClassNameCurrentMode;
             }
             if (componentClassName === this.state.calendarYearBlockClassName) {
                 defaultCalendarBlockStyles = [this.state.calendarYearBlockClassName];
-                this.setCalendarBlockStyles(
-                    calendarBlock,
-                    calendarBlockStyles,
-                    this.state.calendarYearBlockClassNameGreyMode,
-                    this.state.calendarYearBlockClassNameCurrentMode
-                );
+                currentCalendarBlockOptions.calendarBlock = calendarBlock;
+                currentCalendarBlockOptions.calendarBlockStyles = calendarBlockStyles;
+                currentCalendarBlockOptions.isNotCurrentDiapazonBlockClass = this.state.calendarYearBlockClassNameGreyMode;
+                currentCalendarBlockOptions.isCurrentBlockClass = this.state.calendarYearBlockClassNameCurrentMode;
             }
+            this.setCalendarBlockStyles(currentCalendarBlockOptions);
             return calendarBlockStyles.concat(defaultCalendarBlockStyles);
         }
 
