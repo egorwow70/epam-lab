@@ -1,0 +1,25 @@
+.-app-calendar__days-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 80%;
+
+    list-style-type: none;
+    
+    color: white;
+}
+
+.-app-calendar__days-table-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: wrap;
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    list-style-type: none;
+}

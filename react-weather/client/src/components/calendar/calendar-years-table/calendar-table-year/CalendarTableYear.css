@@ -1,0 +1,27 @@
+.-app-calendar__year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    height: 25%;
+    box-sizing: border-box;
+
+    transition: .1s;
+}
+
+.-app-calendar__year:hover {
+   border: 3px solid grey;
+}
+
+.-app-calendar__year_grey {
+    color: grey;
+}
+
+.-app-calendar__year_current {
+    background-color: rgba(76, 76, 238, 1);
+}
+
+.-app-calendar__year_current:hover {
+    border: 3px solid transparent;
+}
