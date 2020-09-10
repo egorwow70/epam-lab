@@ -1,0 +1,35 @@
+.-app-weather__charasteristic {
+    position: relative;
+
+    height: 100%;
+
+    padding: 0px 30px;
+}
+
+.-app-weather__charasteristic:after {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    font-size: 20px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 free", "Font Awesome 5 brands";
+}
+
+.-app-weather__charasteristic_wind:after {
+    content: '\f72e';
+}
+
+.-app-weather__charasteristic_humidity:after {
+    content: '\f043';
+}
+
+.-app-weather__charasteristic_clouds:after {
+    content: '\f0c2';
+}
+
+.-app-weather__charasteristic_pressure:after {
+    content: '\f14e';
+
+    font-weight: 500;
+}

@@ -1,0 +1,13 @@
+.-app-weather__hourly-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: 22.5%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 25px 10px;
+
+    font-weight: 600;
+}

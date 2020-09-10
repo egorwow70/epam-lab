@@ -1,8 +1,8 @@
 import React from 'react';
-import Weather from './Weather';
+import WeatherDaily from './WeatherDaily';
 import WeatherApi from '../../models/weather-api';
 
-class WeatherContainer extends React.PureComponent {
+class WeatherDailyContainer extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -25,29 +25,26 @@ class WeatherContainer extends React.PureComponent {
     }
 
     async setWeather(cityLat, cityLon) { 
-        const forecast = 'hourly';
-        const currentWeatherData = await WeatherApi.getCityWeatherApi(cityLat, cityLon).then(currentWeatherData => currentWeatherData);
-        const hourlyWeatherList = await WeatherApi.getOneCallWeatherApi(forecast, cityLat, cityLon).then(currentWeatherData => currentWeatherData);
+        const forecast = 'daily';
+        const dailyWeatherList = await WeatherApi.getOneCallWeatherApi(forecast, cityLat, cityLon).then(currentWeatherData => currentWeatherData);
         this.setState(state => ({
             ...state,
             isLoading: false,
-            cityWeather: { ...currentWeatherData },
-            hourlyWeatherList: [...hourlyWeatherList]
+            dailyWeatherList: [...dailyWeatherList]
         }));
     }
 
     render() {
         return (
-            <div className="-app-weather">
+            <div className="-app-weather-daily">
                 {
                     !this.state.isLoading &&
-                    <Weather
-                        cityWeather={this.state.cityWeather}
-                        hourlyWeatherList={this.state.hourlyWeatherList} />
+                    <WeatherDaily
+                        dailyWeatherList={this.state.dailyWeatherList} />
                 }
             </div>
         )
     }
 }
 
-export default WeatherContainer;
+export default WeatherDailyContainer;

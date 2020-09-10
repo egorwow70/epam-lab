@@ -23,7 +23,7 @@
 }
 
 .-app-calendar__day_current {
-    background-color: rgba(76, 76, 238, 1);
+    background-color: rgba(114, 114, 255, 1);
 }
 
 .-app-calendar__day_current:hover {

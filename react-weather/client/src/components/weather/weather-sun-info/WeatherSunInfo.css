@@ -1,0 +1,9 @@
+.-app-weather__sun-info {
+    padding-bottom: 40px;
+
+    border-bottom: 2px solid white;
+
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 600;
+}

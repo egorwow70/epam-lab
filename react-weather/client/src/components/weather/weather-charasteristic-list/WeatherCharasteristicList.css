@@ -1,0 +1,15 @@
+.-app-weather__charasteristic-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+
+    list-style-type: none;
+    
+    font-weight: 600;
+}

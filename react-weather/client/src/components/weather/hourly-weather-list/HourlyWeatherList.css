@@ -1,0 +1,24 @@
+.-app-weather__hourly-weather-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 170px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+.-app-weather__hourly-weather-list-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+
+    list-style-type: none;
+}
