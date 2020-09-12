@@ -1,0 +1,14 @@
+.-app-weather__info-icon {
+    width: 130px;
+    height: 130px;
+}
+
+.-app-weather__info-icon_hourly {
+    width: 70px;
+    height: 70px;
+}
+
+.-app-weather__info-icon_daily {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,11 @@
+.-app-weather__info-subtitle_grey {
+    padding-right: 7px;
+
+    opacity: 0.8;
+}
+
+.-app-weather__info-subtitle {
+    margin: 0px;
+
+    font-weight: 500;
+}

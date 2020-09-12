@@ -1,0 +1,12 @@
+.-app-weather-daily__daily-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 600;
+}

@@ -1,0 +1,68 @@
+@import url('./assets/fonts/fontawesome/all/all.min.css');
+
+@import url('./components/calendar/Calendar.css') all;
+
+@import url('./components/calendar/calendar-header/CalendarHeader.css') all;
+@import url('./components/calendar/calendar-header/calendar-data/CalendarData.css') all;
+@import url('./components/calendar/calendar-header/calendar-switcher/CalendarSwitcher.css') all;
+
+@import url('./components/calendar/calendar-weekdays/CalendarWeekdays.css') all;
+@import url('./components/calendar/calendar-weekdays/calendar-weekday/CalendarWeekday.css') all;
+
+@import url('./components/calendar/calendar-days-table/CalendarDaysTable.css') all;
+@import url('./components/calendar/calendar-days-table/calendar-table-day/CalendarTableDay.css') all;
+
+@import url('./components/calendar/calendar-months-table/CalendarMonthsTable.css') all;
+@import url('./components/calendar/calendar-months-table/calendar-table-month/CalendarTableMonth.css') all;
+
+@import url('./components/calendar/calendar-years-table/CalendarYearsTable.css') all;
+@import url('./components/calendar/calendar-years-table/calendar-table-year/CalendarTableYear.css') all;
+
+@import url('./components/weather/Weather.css') all;
+
+@import url('./components/weather/weather-header/WeatherHeader.css') all;
+@import url('./components/weather/weather-header/weather-header-title/WeatherHeaderTitle.css') all;
+@import url('./components/weather/weather-header/weather-header-subtitle/WeatherHeaderSubtitle.css') all;
+
+@import url('./components/weather/weather-info/WeatherInfo.css') all;
+@import url('./components/weather/weather-info/weather-info-temperature/WeatherInfoTemperature.css') all;
+@import url('./components/weather/weather-info/weather-info-icon/WeatherInfoIcon.css') all;
+@import url('./components/weather/weather-info/weather-info-description/WeatherInfoDescription.css') all;
+@import url('./components/weather/weather-info/weather-info-description/weather-info-description-title/WeatherInfoDescriptionTitle.css') all;
+@import url('./components/weather/weather-info/weather-info-description/weather-info-description-subtitle/WeatherInfoDescriptionSubtitle.css') all;
+
+@import url('./components/weather/weather-charasteristic-list/WeatherCharasteristicList.css') all;
+@import url('./components/weather/weather-charasteristic-list/weather-charasteristic/WeatherCharasteristic.css') all;
+
+@import url('./components/weather/weather-sun-info/WeatherSunInfo.css') all;
+
+@import url('./components/weather/hourly-weather-list/HourlyWeatherList.css') all;
+@import url('./components/weather/hourly-weather-list/hourly-weather/HourlyWeather.css') all;
+@import url('./components/weather/hourly-weather-list/hourly-weather-button/HourlyWeatherButton.css') all;
+
+@import url('./components/weather-daily/WeatherDaily.css') all;
+@import url('./components/weather-daily/weather-daily-title/WeatherDailyTitle.css') all;
+@import url('./components/weather-daily/daily-weather-list/DailyWeatherList.css') all;
+@import url('./components/weather-daily/daily-weather-list/daily-weather/DailyWeather.css') all;
+@import url('./components/weather-daily/daily-weather-list/daily-weather/daily-weather-info/DailyWeatherInfo.css') all;
+@import url('./components/weather-daily/daily-weather-list/daily-weather/daily-weather-subinfo/DailyWeatherSubinfo.css') all;
+
+@import url('./components/menu/Menu.css') all;
+@import url('./components/menu/menu-logo/MenuLogo.css') all;
+@import url('./components/menu/search-city/SearchCity.css') all;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

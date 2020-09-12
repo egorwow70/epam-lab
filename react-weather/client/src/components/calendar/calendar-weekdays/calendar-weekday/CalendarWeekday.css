@@ -1,0 +1,12 @@
+.-app-calendar__weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 14.285714285714%;
+
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+}

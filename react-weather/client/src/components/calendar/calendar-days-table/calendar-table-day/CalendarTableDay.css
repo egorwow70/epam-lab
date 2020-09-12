@@ -1,0 +1,51 @@
+.-app-calendar__day {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 14.285714285714%;
+    height: 16.666666666666666666667%;
+    box-sizing: border-box;
+
+    transition: .1s;
+
+    font-size: 17px;
+}
+
+.-app-calendar__day:hover {
+   border: 3px solid grey;
+}
+
+.-app-calendar__day_grey {
+    color: grey;
+}
+
+.-app-calendar__day_current {
+    background-color: rgba(114, 114, 255, 1);
+}
+
+.-app-calendar__day_current:hover {
+    border: 3px solid transparent;
+}
+
+.-app-calendar__day_current::after {
+   content: '';
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   width: 85%;
+   height: 85%;
+
+   border: 2px solid black;
+   background: transparent;
+}
+
+.-app-calendar__day_active {
+    border: 3px solid rgba(76, 76, 238, 1);
+}
+

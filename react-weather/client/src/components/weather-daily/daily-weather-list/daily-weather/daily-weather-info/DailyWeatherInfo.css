@@ -1,0 +1,12 @@
+.-app-weather-daily__daily-weather-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.-app-weather-daily__daily-weather-data_grey {
+    opacity: 0.6;
+}
