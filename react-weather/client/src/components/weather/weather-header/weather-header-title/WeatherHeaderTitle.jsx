@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WeatherHeaderTitle(props) {
+function WeatherHeaderTitle({
+    cityName,
+    cityLat,
+    cityLon
+}) {
     return (
         <h2 className="-app-weather__header-title">
-            The weather in {props.cityName} (lat: {props.cityLat}, lon: {props.cityLon})
+            The weather in {cityName} (lat: {cityLat}, lon: {cityLon})
         </h2>
     );
 }

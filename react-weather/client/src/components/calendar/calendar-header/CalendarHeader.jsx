@@ -2,29 +2,41 @@ import React from 'react';
 import CalendarData from './calendar-data/CalendarData';
 import CalendarSwitcher from './calendar-switcher/CalendarSwitcher';
 import PropTypes from 'prop-types';
-import RussianDate from '../../../models/russian-date';
+import RussianDate from '../../../models/date/russian-date';
 
-function CalendarHeader(props) {
+function CalendarHeader({
+    currentCalendarDate,
+    onCalendarMonthMode,
+    onCalendarYearsMode,
+    isSwitchedToMonthsTable,
+    isSwitchedToYearsTable,
+    onPreviousMonthChange,
+    onNextMonthChange,
+    onPreviousYearChange,
+    onNextYearChange,
+    onPreviousDecadeChange,
+    onNextDecadeChange
+}) {
     return (
         <div className="-app-calendar__header">
             <div className="-app-calendar__header-wrapper">
                 <h2 className="-app-calendar__header-title">
                     <CalendarData
-                        currentCalendarDate={props.currentCalendarDate.clone()}
-                        onCalendarMonthMode={props.onCalendarMonthMode}
-                        onCalendarYearsMode={props.onCalendarYearsMode}
-                        isSwitchedToMonthsTable={props.isSwitchedToMonthsTable}
-                        isSwitchedToYearsTable={props.isSwitchedToYearsTable} />
+                        currentCalendarDate={currentCalendarDate.clone()}
+                        onCalendarMonthMode={onCalendarMonthMode}
+                        onCalendarYearsMode={onCalendarYearsMode}
+                        isSwitchedToMonthsTable={isSwitchedToMonthsTable}
+                        isSwitchedToYearsTable={isSwitchedToYearsTable} />
                 </h2>
                 <CalendarSwitcher
-                    onPreviousMonthChange={props.onPreviousMonthChange}
-                    onNextMonthChange={props.onNextMonthChange}
-                    onPreviousYearChange={props.onPreviousYearChange}
-                    onNextYearChange={props.onNextYearChange}
-                    onPreviousDecadeChange={props.onPreviousDecadeChange}
-                    onNextDecadeChange={props.onNextDecadeChange}
-                    isSwitchedToMonthsTable={props.isSwitchedToMonthsTable}
-                    isSwitchedToYearsTable={props.isSwitchedToYearsTable} />
+                    onPreviousMonthChange={onPreviousMonthChange}
+                    onNextMonthChange={onNextMonthChange}
+                    onPreviousYearChange={onPreviousYearChange}
+                    onNextYearChange={onNextYearChange}
+                    onPreviousDecadeChange={onPreviousDecadeChange}
+                    onNextDecadeChange={onNextDecadeChange}
+                    isSwitchedToMonthsTable={isSwitchedToMonthsTable}
+                    isSwitchedToYearsTable={isSwitchedToYearsTable} />
             </div>
         </div>
     );

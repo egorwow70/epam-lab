@@ -1,9 +1,9 @@
 import React from 'react';
 import WeatherCharasteristic from './weather-charasteristic/WeatherCharasteristic';
 import PropTypes from 'prop-types';
-import WeatherCharacteristicClassNames from '../../../models/weather-charasteristic-class-names';
+import WeatherCharacteristicClassNames from '../../../models/weather/weather-charasteristic-class-names';
 
-function WeatherCharasteristicList(props) {
+function WeatherCharasteristicList({cityWeather}) {
     const charasteristicList = [
         WeatherCharacteristicClassNames.WEATHER_WIND_CHARASTERISTIC_CLASS_NAME,
         WeatherCharacteristicClassNames.WEATHER_HUMIDITY_CHARASTERISTIC_CLASS_NAME,
@@ -14,7 +14,7 @@ function WeatherCharasteristicList(props) {
         <ul className="-app-weather__charasteristic-list">
            {charasteristicList.map((charasteristic, index)=>{
                return <WeatherCharasteristic 
-                cityWeather={props.cityWeather}
+                cityWeather={cityWeather}
                 className={charasteristic}
                 key={index}/>
            })}

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withCalendarBlocks from '../../../hocs/withCalendarBlocks';
 import CalendarTableDay from './calendar-table-day/CalendarTableDay';
-import CalendarTablesClassNames from '../../../models/calendar-tables-class-names';
+import CalendarTablesClassNames from '../../../models/calendar/calendar-tables-class-names';
 
-function CalendarDaysTable(props) {
-    const calendarBlockList = props.getCalendarBlockList();
+function CalendarDaysTable({getCalendarBlockList}) {
+    const calendarBlockList = getCalendarBlockList();
     const calendarDaysTableClassName = CalendarTablesClassNames.CALENDAR_DAYS_TABLE_DEFAULT_CLASS_NAME;
 
     return (

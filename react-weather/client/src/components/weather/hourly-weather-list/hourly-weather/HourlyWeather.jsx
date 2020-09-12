@@ -2,18 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import WeatherInfoIcon from '../../weather-info/weather-info-icon/WeatherInfoIcon';
 
-function HourlyWeather(props) {
+function HourlyWeather({
+    time,
+    icon,
+    airTemperature
+}) {
     const weatherInfoIconClassNameModificator = '-app-weather__info-icon_hourly';
     return (
         <li className="-app-weather__hourly-weather">
             <div>
-                {props.time}
+                {time}
             </div>
             <WeatherInfoIcon
                 classNameModificator={weatherInfoIconClassNameModificator}
-                weatherIcon={props.icon} />
+                weatherIcon={icon} />
             <div>
-                {props.airTemperature}
+                {airTemperature}
             </div>
         </li>
     );

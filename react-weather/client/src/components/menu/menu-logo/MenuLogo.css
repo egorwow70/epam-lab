@@ -1,0 +1,53 @@
+@keyframes sunCycle {
+    0%{
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.-app__menu-logo {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    height: 100%;
+    margin: 0px;
+
+    color: white;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.-app__menu-symbol {
+    position: absolute;
+    top: 50%;
+    left: 22.5%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: sunCycle 3s infinite;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+}
+
+.-app__menu-symbol::before {
+    content: '\f185';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: rgba(255, 211, 65, 1);
+    font-style: normal;
+    font-size: 44px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 free", "Font Awesome 5 brands";
+}

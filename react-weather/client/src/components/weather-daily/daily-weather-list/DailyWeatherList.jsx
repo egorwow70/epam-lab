@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DailyWeather from './daily-weather/DailyWeather';
 
-function DailyWeatherList(props) {
+function DailyWeatherList({dailyWeatherList}) {
     return (
         <ul className="-app-weather-daily__daily-weather-list">
-            {props.dailyWeatherList.map((dailyWeather, index) => {
+            {dailyWeatherList.map((dailyWeather, index) => {
                 return <DailyWeather
                     data={dailyWeather.data}
                     midday={dailyWeather.midday}

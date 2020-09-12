@@ -4,15 +4,15 @@ import WeatherInfoIcon from './weather-info-icon/WeatherInfoIcon';
 import WeatherInfoTemperature from './weather-info-temperature/WeatherInfoTemperature';
 import PropTypes from 'prop-types';
 
-function WeatherInfo(props) {
+function WeatherInfo({weather}) {
     return (
         <div className="-app-weather__info">
-            <WeatherInfoTemperature airTemperature={props.weather.airTemperature} />
+            <WeatherInfoTemperature airTemperature={weather.airTemperature} />
             <WeatherInfoIcon 
-                weatherIcon={props.weather.weatherIcon}/>
+                weatherIcon={weather.weatherIcon}/>
             <WeatherInfoDescription
-                weatherDescription={props.weather.weatherDescription}
-                feelsLikeAirTemperature={props.weather.feelsLikeAirTemperature} />
+                weatherDescription={weather.weatherDescription}
+                feelsLikeAirTemperature={weather.feelsLikeAirTemperature} />
         </div>
     );
 }

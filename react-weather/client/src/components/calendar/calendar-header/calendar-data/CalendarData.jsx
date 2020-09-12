@@ -1,38 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RussianDate from '../../../../models/russian-date'
+import RussianDate from '../../../../models/date/russian-date'
 
-function CalendarData(props) {
+function CalendarData({
+    currentCalendarDate,
+    onCalendarMonthMode,
+    onCalendarYearsMode,
+    isSwitchedToMonthsTable,
+    isSwitchedToYearsTable,
+}) {
     function switchToCalendarMonthsTable() {
-        props.onCalendarMonthMode();
+        onCalendarMonthMode();
     }
 
     function switchToCalendarYearsTable() {
-        props.onCalendarYearsMode();
+        onCalendarYearsMode();
     }
 
     return (
         <div className="-app-calendar__data">
-            {Boolean(props.isSwitchedToMonthsTable) &&
+            {Boolean(isSwitchedToMonthsTable) &&
                 <div
                     className="-app-calendar__data-info"
                     onClick={() => switchToCalendarYearsTable()}>
-                    {props.currentCalendarDate.data.year}
+                    {currentCalendarDate.data.year}
                 </div>
             }
             {
-                Boolean(!props.isSwitchedToMonthsTable) &&
-                Boolean(!props.isSwitchedToYearsTable) &&
+                Boolean(!isSwitchedToMonthsTable) &&
+                Boolean(!isSwitchedToYearsTable) &&
                 <div
                     className="-app-calendar__data-info"
                     onClick={() => switchToCalendarMonthsTable()}>
-                    {props.currentCalendarDate.getDataName()}
+                    {currentCalendarDate.getDataName()}
                 </div>
             }
             {
-                Boolean(props.isSwitchedToYearsTable) &&
+                Boolean(isSwitchedToYearsTable) &&
                 <div className="-app-calendar__data-info -app-calendar__data-info_with-default-cursor">
-                    {props.currentCalendarDate.getDecadeDiapazon()}
+                    {currentCalendarDate.getDecadeDiapazon()}
                 </div>
             }
         </div>

@@ -6,17 +6,20 @@ import WeatherSunInfo from './weather-sun-info/WeatherSunInfo';
 import PropTypes from 'prop-types';
 import HourlyWeatherList from './hourly-weather-list/HourlyWeatherList';
 
-function Weather(props) {
+function Weather({
+    cityWeather,
+    hourlyWeatherList
+}) {
     return (
         <div className="-app-weather-wrapper">
             <WeatherHeader 
-                requestTime={props.cityWeather.requestTime} 
-                city={props.cityWeather.city}/>
+                requestTime={cityWeather.requestTime} 
+                city={cityWeather.city}/>
             <WeatherInfo 
-                weather={props.cityWeather.weather}/>
-            <WeatherCharasteristicList cityWeather={props.cityWeather}/>
-            <WeatherSunInfo sunriseAndSunset={props.cityWeather.sunriseAndSunset}/>
-            <HourlyWeatherList hourlyWeatherList={props.hourlyWeatherList}/>
+                weather={cityWeather.weather}/>
+            <WeatherCharasteristicList cityWeather={cityWeather}/>
+            <WeatherSunInfo sunriseAndSunset={cityWeather.sunriseAndSunset}/>
+            <HourlyWeatherList hourlyWeatherList={hourlyWeatherList}/>
         </div>
     );
 }

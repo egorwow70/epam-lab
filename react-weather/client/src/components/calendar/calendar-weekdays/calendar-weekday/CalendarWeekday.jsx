@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CalendarWeekday(props) {
+function CalendarWeekday({calendarBlock}) {
     return (
         <li className="-app-calendar__weekday">
-            {props.calendarBlock}
+            {calendarBlock}
         </li>
     );
 }

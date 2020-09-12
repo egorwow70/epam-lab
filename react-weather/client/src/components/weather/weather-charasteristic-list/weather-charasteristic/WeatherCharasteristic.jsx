@@ -1,32 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WeatherCharacteristicClassNames from '../../../../models/weather-charasteristic-class-names';
+import WeatherCharacteristicClassNames from '../../../../models/weather/weather-charasteristic-class-names';
 
-function WeatherCharasteristic(props) {
+function WeatherCharasteristic({
+    cityWeather,
+    className
+}) {
     const defaultWeatherCharacteristicClassName = WeatherCharacteristicClassNames.WEATHER_DEFAULT_CHARASTERISTIC_CLASS_NAME;
     let weatherCharasteristicClassList = [defaultWeatherCharacteristicClassName];
-    weatherCharasteristicClassList.push(props.className);
+    weatherCharasteristicClassList.push(className);
     return (
         <li
             className={weatherCharasteristicClassList.join(' ')}>
-            {props.className === WeatherCharacteristicClassNames.WEATHER_WIND_CHARASTERISTIC_CLASS_NAME &&
+            {className === WeatherCharacteristicClassNames.WEATHER_WIND_CHARASTERISTIC_CLASS_NAME &&
                 <React.Fragment>
-                    {props.cityWeather.wind.windSpeed}, {props.cityWeather.wind.windDeg}
+                    {cityWeather.wind.windSpeed}, {cityWeather.wind.windDeg}
                 </React.Fragment>
             }
-            {props.className === WeatherCharacteristicClassNames.WEATHER_HUMIDITY_CHARASTERISTIC_CLASS_NAME &&
+            {className === WeatherCharacteristicClassNames.WEATHER_HUMIDITY_CHARASTERISTIC_CLASS_NAME &&
                 <React.Fragment>
-                    {props.cityWeather.weather.humidity}
+                    {cityWeather.weather.humidity}
                 </React.Fragment>
             }
-            {props.className === WeatherCharacteristicClassNames.WEATHER_CLOUDS_CHARASTERISTIC_CLASS_NAME &&
+            {className === WeatherCharacteristicClassNames.WEATHER_CLOUDS_CHARASTERISTIC_CLASS_NAME &&
                 <React.Fragment>
-                    {props.cityWeather.clouds}
+                    {cityWeather.clouds}
                 </React.Fragment>
             }
-            {props.className === WeatherCharacteristicClassNames.WEATHER_PRESSURE_CHARASTERISTIC_CLASS_NAME &&
+            {className === WeatherCharacteristicClassNames.WEATHER_PRESSURE_CHARASTERISTIC_CLASS_NAME &&
                 <React.Fragment>
-                    {props.cityWeather.weather.pressure}
+                    {cityWeather.weather.pressure}
                 </React.Fragment>
             }
         </li>

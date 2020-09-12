@@ -4,19 +4,26 @@ import WeatherInfoIcon from '../../../weather/weather-info/weather-info-icon/Wea
 import DailyWeatherSubinfo from './daily-weather-subinfo/DailyWeatherSubinfo';
 import DailyWeatherInfo from './daily-weather-info/DailyWeatherInfo';
 
-function DailyWeather(props) {
+function DailyWeather({
+    midday,
+    data,
+    icon,
+    dayTemperature,
+    nightTemperature,
+    description
+}) {
     return (
         <li className="-app-weather-daily__daily-weather">
             <DailyWeatherInfo 
-                midday={props.midday}
-                data={props.data}/>
+                midday={midday}
+                data={data}/>
             <WeatherInfoIcon
                 classNameModificator={'-app-weather__info-icon_daily'}
-                weatherIcon={props.icon}/>
+                weatherIcon={icon}/>
             <DailyWeatherSubinfo 
-                dayTemperature={props.dayTemperature}
-                nightTemperature={props.nightTemperature}
-                description={props.description}/>
+                dayTemperature={dayTemperature}
+                nightTemperature={nightTemperature}
+                description={description}/>
         </li>
     );
 }

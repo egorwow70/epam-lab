@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CalendarSwitcher(props) {
+function CalendarSwitcher({
+    isSwitchedToMonthsTable,
+    isSwitchedToYearsTable,
+    onPreviousMonthChange,
+    onNextMonthChange,
+    onPreviousYearChange,
+    onNextYearChange,
+    onPreviousDecadeChange,
+    onNextDecadeChange
+}) {
     function switchToPrevious() {
-        if (props.isSwitchedToMonthsTable) {
-            props.onPreviousYearChange();
+        if (isSwitchedToMonthsTable) {
+            onPreviousYearChange();
         } else {
             removePastHighlightedCalendarDay();
-            props.onPreviousMonthChange();
+            onPreviousMonthChange();
         }
-        if (props.isSwitchedToYearsTable) {
-            props.onPreviousDecadeChange();
+        if (isSwitchedToYearsTable) {
+            onPreviousDecadeChange();
         }
     }
 
@@ -22,14 +31,14 @@ function CalendarSwitcher(props) {
     }
 
     function switchToNext() {
-        if (props.isSwitchedToMonthsTable) {
-            props.onNextYearChange();
+        if (isSwitchedToMonthsTable) {
+            onNextYearChange();
         } else {
             removePastHighlightedCalendarDay();
-            props.onNextMonthChange();
+            onNextMonthChange();
         }
-        if (props.isSwitchedToYearsTable) {
-            props.onNextDecadeChange();
+        if (isSwitchedToYearsTable) {
+            onNextDecadeChange();
         }
     }
 

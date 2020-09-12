@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function HourlyWeatherButton(props) {
+function HourlyWeatherButton({
+    modificatorClassName,
+    scrollFunc,
+    isDisabled
+}) {
     const defaultHourlyWeatherButtonClassName = '-app-weather__hourly-weather-button';
     let hourlyWeatherButtonClassList = [defaultHourlyWeatherButtonClassName];
-    if (props.modificatorClassName === '-app-weather__hourly-weather-button_left') {
+    if (modificatorClassName === '-app-weather__hourly-weather-button_left') {
         hourlyWeatherButtonClassList.push('-app-weather__hourly-weather-button_left');
     } else {
         hourlyWeatherButtonClassList.push('-app-weather__hourly-weather-button_right');
@@ -12,8 +16,8 @@ function HourlyWeatherButton(props) {
     return (
         <button
             className={hourlyWeatherButtonClassList.join(' ')}
-            onClick={() => props.scrollFunc()}
-            disabled={props.isDisabled}>
+            onClick={() => scrollFunc()}
+            disabled={isDisabled}>
         </button>
     );
 }

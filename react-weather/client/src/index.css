@@ -47,6 +47,10 @@
 @import url('./components/weather-daily/daily-weather-list/daily-weather/daily-weather-info/DailyWeatherInfo.css') all;
 @import url('./components/weather-daily/daily-weather-list/daily-weather/daily-weather-subinfo/DailyWeatherSubinfo.css') all;
 
+@import url('./components/menu/Menu.css') all;
+@import url('./components/menu/menu-logo/MenuLogo.css') all;
+@import url('./components/menu/search-city/SearchCity.css') all;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

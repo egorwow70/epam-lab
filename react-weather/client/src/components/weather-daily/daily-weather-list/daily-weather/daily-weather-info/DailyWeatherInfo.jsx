@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DailyWeatherInfo(props) {
+function DailyWeatherInfo({
+    midday,
+    data
+}) {
     return (
         <div className="-app-weather-daily__daily-weather-info">
             <div className="-app-weather-daily__daily-weather-midday">
-                {props.midday}
+                {midday}
             </div>
             <div className="-app-weather-daily__daily-weather-data -app-weather-daily__daily-weather-data_grey">
-                {props.data}
+                {data}
             </div>
         </div>
     );

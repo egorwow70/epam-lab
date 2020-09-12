@@ -1,5 +1,5 @@
 import React from 'react';
-import RussianDate from '../../models/russian-date';
+import RussianDate from '../../models/date/russian-date';
 import PropTypes from 'prop-types';
 
 class TodayData extends React.PureComponent {

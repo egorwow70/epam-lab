@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarYear from '../../../../models/calendar-year';
+import CalendarYear from '../../../../models/calendar/calendar-year';
 import withStylesCalendarBlock from '../../../../hocs/withStylesCalendarBlock';
-import CalendarBlocksClassNames from '../../../../models/calendar-blocks-class-names';
+import CalendarBlocksClassNames from '../../../../models/calendar/calendar-blocks-class-names';
 
-function CalendarTableYear(props) {
+function CalendarTableYear({
+    calendarBlock,
+    onSwitchToThisYear,
+    getCalendarBlockStyles
+}) {
     function switchToThisYear(year) {
-        props.onSwitchToThisYear(year);
+        onSwitchToThisYear(year);
     }
 
-    const currentCaledarYear = props.calendarBlock;
-    const calendarYearStyles = props.getCalendarBlockStyles(currentCaledarYear.clone());
+    const currentCaledarYear = calendarBlock;
+    const calendarYearStyles = getCalendarBlockStyles(currentCaledarYear.clone());
 
     return (
         <li
@@ -26,7 +30,8 @@ function CalendarTableYear(props) {
 
 CalendarTableYear.propTypes = {
     calendarBlock: PropTypes.instanceOf(CalendarYear),
-    onSwitchToThisYear: PropTypes.func
+    onSwitchToThisYear: PropTypes.func,
+    getCalendarBlockStyles: PropTypes.func
 }
 
 export default withStylesCalendarBlock(

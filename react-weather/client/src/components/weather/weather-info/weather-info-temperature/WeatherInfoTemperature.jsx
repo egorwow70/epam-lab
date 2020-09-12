@@ -3,10 +3,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WeatherInfoTemperature(props) {
+function WeatherInfoTemperature({airTemperature}) {
     return (
         <div className="-app-weather__info-temperature">
-                {props.airTemperature}
+                {airTemperature}
         </div>
     );
 }

@@ -9,7 +9,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-var weather_router = require('./routes/weather'); 
+var weather_router = require('./routes/weather/weather'); 
 app.use('/weather-api', weather_router);
+
+var geocode_router = require('./routes/geocode/geocode'); 
+app.use('/geocode-api', geocode_router);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

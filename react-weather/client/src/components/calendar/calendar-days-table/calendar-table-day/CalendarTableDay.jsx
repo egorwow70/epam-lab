@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarDay from '../../../../models/calendar-day';
+import CalendarDay from '../../../../models/calendar/calendar-day';
 import withStylesCalendarBlock from '../../../../hocs/withStylesCalendarBlock';
-import CalendarBlocksClassNames from '../../../../models/calendar-blocks-class-names';
+import CalendarBlocksClassNames from '../../../../models/calendar/calendar-blocks-class-names';
 
-function CalendarTableDay(props) {
+function CalendarTableDay({
+    calendarBlock,
+    getCalendarBlockStyles
+}) {
     function highlightCalendarDay(event) {
         const pastHighlightedCalendarDay = document.querySelector('.-app-calendar__day_active');
         if (pastHighlightedCalendarDay) {
@@ -30,8 +33,8 @@ function CalendarTableDay(props) {
             : dayOrMonthNumber;
     }
 
-    const currentCalendarDay = props.calendarBlock;
-    const calendarDayStyles = props.getCalendarBlockStyles(currentCalendarDay.clone());
+    const currentCalendarDay = calendarBlock;
+    const calendarDayStyles = getCalendarBlockStyles(currentCalendarDay.clone());
 
     return (
         <li

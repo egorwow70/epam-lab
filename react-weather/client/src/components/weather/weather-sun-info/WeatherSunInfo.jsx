@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WeatherSunInfo(props) {
+function WeatherSunInfo({sunriseAndSunset}) {
     return (
         <div className="-app-weather__sun-info">
-            sunrise {props.sunriseAndSunset.sunrise}, sunset {props.sunriseAndSunset.sunset}
+            sunrise {sunriseAndSunset.sunrise}, sunset {sunriseAndSunset.sunset}
         </div>
     );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WeatherHeaderSubtitle(props) {
+function WeatherHeaderSubtitle({requestTime}) {
     return (
         <h3 className="-app-weather__header-subtitle">
             <span className="-app-weather__header-subtitle_left-side">
                 Now
                 </span>
-            {props.requestTime}
+            {requestTime}
         </h3>
     );
 }

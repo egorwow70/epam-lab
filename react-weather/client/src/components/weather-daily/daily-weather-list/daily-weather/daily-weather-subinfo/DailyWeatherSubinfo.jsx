@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DailyWeatherSubinfo(props) {
+function DailyWeatherSubinfo({
+    dayTemperature,
+    nightTemperature,
+    description
+}) {
     return (
         <div className="-app-weather-daily__daily-weather-subinfo">
             <div  className="-app-weather-daily__daily-weather-dtemperature">
-                Day {props.dayTemperature}
+                Day {dayTemperature}
             </div>
             <div  className="-app-weather-daily__daily-weather-ntemperature -app-weather-daily__daily-weather-ntemperature_grey">
-                Night {props.nightTemperature}
+                Night {nightTemperature}
             </div>
             <div  className="-app-weather-daily__daily-weather-description -app-weather-daily__daily-weather-description_grey">
-                {props.description}
+                {description}
             </div>
         </div>
     );

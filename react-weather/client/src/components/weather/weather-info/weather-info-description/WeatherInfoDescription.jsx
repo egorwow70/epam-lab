@@ -3,11 +3,14 @@ import WeatherInfoDescriptionTitle from './weather-info-description-title/Weathe
 import WeatherInfoDescriptionSubtitle from './weather-info-description-subtitle/WeatherInfoDescriptionSubtitle';
 import PropTypes from 'prop-types';
 
-function WeatherInfoDescription(props) {
+function WeatherInfoDescription({
+    weatherDescription,
+    feelsLikeAirTemperature
+}) {
     return (
         <div className="-app-weather__info-description">
-            <WeatherInfoDescriptionTitle weatherDescription={props.weatherDescription}/>
-            <WeatherInfoDescriptionSubtitle feelsLikeAirTemperature={props.feelsLikeAirTemperature}/>
+            <WeatherInfoDescriptionTitle weatherDescription={weatherDescription}/>
+            <WeatherInfoDescriptionSubtitle feelsLikeAirTemperature={feelsLikeAirTemperature}/>
         </div>
     );
 }

@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarMonth from '../../../../models/calendar-month';
-import RussianDate from '../../../../models/russian-date';
+import CalendarMonth from '../../../../models/calendar/calendar-month';
+import RussianDate from '../../../../models/date/russian-date';
 import withStylesCalendarBlock from '../../../../hocs/withStylesCalendarBlock';
-import CalendarBlocksClassNames from '../../../../models/calendar-blocks-class-names';
+import CalendarBlocksClassNames from '../../../../models/calendar/calendar-blocks-class-names';
 
-function CalendarTableMonth(props) {
+function CalendarTableMonth({
+    calendarBlock,
+    onSwitchToThisMonth,
+    getCalendarBlockStyles
+}) {
     function switchToThisMonth(month, year) {
-        props.onSwitchToThisMonth(month, year);
+        onSwitchToThisMonth(month, year);
     }
 
-    const currentCaledarMonth = props.calendarBlock;
-    const calendarMonthStyles = props.getCalendarBlockStyles(currentCaledarMonth.clone());
+    const currentCaledarMonth = calendarBlock;
+    const calendarMonthStyles = getCalendarBlockStyles(currentCaledarMonth.clone());
 
     const currentMonthEuropeDate = new Date(currentCaledarMonth.year, currentCaledarMonth.month - 1, 1);
     const currentMonthRussianDate = new RussianDate(currentMonthEuropeDate);

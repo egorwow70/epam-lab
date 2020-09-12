@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WeatherInfoDescriptionTitle(props) {
+function WeatherInfoDescriptionTitle({weatherDescription}) {
     return (
         <h4 className="-app-weather__info-title">
-            {props.weatherDescription}
+            {weatherDescription}
         </h4>
     );
 }

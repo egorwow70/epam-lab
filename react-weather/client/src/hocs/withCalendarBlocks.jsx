@@ -1,6 +1,6 @@
 import React from 'react';
-import CalendarTablesClassNames from '../models/calendar-tables-class-names';
-import CalendarModel from '../models/calendar-model';
+import CalendarTablesClassNames from '../models/calendar/calendar-tables-class-names';
+import CalendarModel from '../models/calendar/calendar-model';
 
 function withCalendarBlocks(Component, CalendarBlockComponent, componentClassName) {
     class WithCalendarBlocks extends React.PureComponent {

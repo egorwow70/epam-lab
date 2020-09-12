@@ -1,7 +1,7 @@
 import React from 'react';
-import RussianDate from '../../models/russian-date';
+import RussianDate from '../../models/date/russian-date';
 import PropTypes from 'prop-types';
-import CalendarModel from '../../models/calendar-model';
+import CalendarModel from '../../models/calendar/calendar-model';
 import Calendar from './Calendar';
 
 class CalendarContainer extends React.PureComponent {
